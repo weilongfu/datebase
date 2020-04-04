@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>MyProGreenRoom</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 配置struts2过滤器 -->
+  <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+	<!-- 配置servlet -->
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.servlet.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+     <servlet-name>ShoesinfoServlet</servlet-name>
+     <servlet-class>com.servlet.ShoesinfoServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	 <servlet-name>UserServlet</servlet-name>
+	 <servlet-class>com.servlet.UserServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	 <servlet-name>OrderServlet</servlet-name>
+	 <servlet-class>com.servlet.OrderServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	 <servlet-name>AdminServlet</servlet-name>
+	 <servlet-class>com.servlet.AdminServlet</servlet-class>
+	</servlet>
+	<!-- servlet的映射 -->
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	 <servlet-name>ShoesinfoServlet</servlet-name>
+	 <url-pattern>/shoes.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	 <servlet-name>UserServlet</servlet-name>
+	 <url-pattern>/user.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	  <servlet-name>OrderServlet</servlet-name>
+	  <url-pattern>/order.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	 <servlet-name>AdminServlet</servlet-name>
+	 <url-pattern>/admin.do</url-pattern>
+	</servlet-mapping>
+	 <!-- 定义过滤器 -->
+    <filter>
+      <filter-name>AdminFilter</filter-name>
+      <filter-class>com.filter.AdminFilter</filter-class>
+     </filter> 
+     
+     <!-- 定义过虑器的拦截机制   拦截所有以.do结尾的页面-->
+    <filter-mapping>
+       <filter-name>AdminFilter</filter-name>
+       <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+  
+</web-app>

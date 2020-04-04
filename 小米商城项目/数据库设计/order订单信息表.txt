@@ -1,0 +1,41 @@
+-- Create table
+create table
+(
+  orderid      VARCHAR2(100) not null,
+  orderdate    DATE not null,
+  orderprice   NUMBER(10,2) not null,
+  userid       NUMBER(10) not null,
+  username     VARCHAR2(20) not null,
+  orderaddress VARCHAR2(500) not null,
+  phoen        VARCHAR2(20),
+  orderstase   VARCHAR2(20)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    next 1
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table 
+  add primary key (ORDERID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table 
+  add foreign key (USERID)
+  references TB_USER (USERID);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 引入dtd约束 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<!-- 设置编码格式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 判断用户登录的action -->
+	<package name="demo1" extends="struts-default" namespace="/">
+	    <action name="login" class="com.action.LoginAction">
+	      <!-- type属性
+       		-配置如何到路径中（转发或重定向）
+      		-type属性默认值 做转发操作 
+      		这里重定向到进入主页的action里面-->
+	       <result name="true" type="redirect">/shoes_toindex</result>
+	       <result name="false" type="redirect">/MyShoes/login.jsp</result>
+	    </action>
+	    
+	    <!-- 配置进入主页的action -->
+	    <action name="shoes_*" class="com.action.ShoesAction" method="{1}">
+	       <result name="toindex" type="redirect">/MyShoes/index.jsp</result>
+	    </action>
+	    
+	    
+	    
+	    
+	</package>
+
+	   	 
+	</struts>

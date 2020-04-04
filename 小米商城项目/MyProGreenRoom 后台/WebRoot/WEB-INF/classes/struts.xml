@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 引入dtd约束 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<!-- 设置编码格式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+	<package name="dmeo" extends="struts-default" namespace="/">
+	   <action name="greenGoom_*" class="com.action.LoginAction" method="{1}">
+	    <result name="login" type="redirect">/index_query.action</result>
+	    <result name="loginsb" type="redirect">/GreenGoom/Login.jsp</result>
+	   </action>
+	   
+	   
+	   
+	     <!-- 配置进入主页的action -->
+	   <action name="index_*" class="com.action.IndexAction" method="{1}">
+	     <!-- 配置跳转的页面 dispatcher默认做转发操作 -->
+	     <result name="index" type="dispatcher">/GreenGoom/index.jsp</result>
+	     
+	     <!-- 配置执行完删除操作之后跳转的页面  重定向到查询所有商品信息的action-->
+	     <result name="delete" type="redirect">/index_query.action</result>
+	     
+	     <!-- 配置跳转到修改页面的result -->
+	     <result name="toUpdate" type="dispatcher">/GreenGoom/UpdateShoesinfo.jsp</result>
+	     
+	     <!-- 配置执行完修改操作之后跳转的页面  重定向到查询所有商品信息的action-->
+	     <result name="update" type="redirect">/index_query.action</result>
+	   </action>
+	   
+	   
+	   <!-- 配置进入对用户进入操作的action -->
+	   <action name="user_*" class="com.action.UserAction" method="{1}">
+	   <!-- 配置进入添加用户页面的action -->
+	    <result name="toUser" type="dispatcher">GreenGoom/addUser.jsp</result>
+	    
+	    
+	   </action>
+	   
+	</package>
+	
+
+	   	 
+	</struts>

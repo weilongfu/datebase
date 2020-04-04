@@ -1,0 +1,21 @@
+-- Create table
+create table
+(
+  id       NUMBER(8) not null,
+  name     VARCHAR2(20),
+  pwd      VARCHAR2(20),
+  sex      VARCHAR2(4),
+  intime   DATE,
+  birthday DATE
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    next 8
+    minextents 1
+    maxextents unlimited
+  );

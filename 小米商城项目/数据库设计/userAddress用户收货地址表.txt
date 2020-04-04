@@ -1,0 +1,40 @@
+-- Create table
+create table
+(
+  id      NUMBER(10) not null,
+  userid  NUMBER(10),
+  area    VARCHAR2(100),
+  address VARCHAR2(500),
+  zipcode VARCHAR2(6),
+  name    VARCHAR2(60),
+  tel     VARCHAR2(20)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    next 1
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table 
+  add primary key (ID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table 
+  add foreign key (USERID)
+  references TB_USER (USERID);

@@ -1,0 +1,65 @@
+/* CSS Document */
+
+
+<!--
+.font1 {
+	font-family: "����";
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+.font2 {
+	font-family: "����";
+	font-size: 14px;
+	color: #333333;
+	line-height: 25px;
+}
+
+.font3 {
+	font-family: "����";
+	font-size: 14px;
+	color: #333333;
+	text-decoration: line-through;
+}
+
+.font4 {
+	font-family: "����";
+	font-size: 14px;
+	color: #FF0000;
+	font-weight: bold;
+}
+.div1 {
+	border: thin dashed #666666;
+}
+
+a:link {
+	font-size: 14px;
+	text-decoration: none;
+	color: #FF0000;
+	font-weight: bold;
+}
+a:visited {
+	text-decoration: none;
+	color: #FF0000;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+
+.tab{
+	float:left;
+	margin-left: 15px;
+}
+
+hr{
+	 clear: both;
+	border:thin dotted #FF0000;
+}
+-->
+

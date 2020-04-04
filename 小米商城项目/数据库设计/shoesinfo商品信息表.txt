@@ -1,0 +1,59 @@
+-- Create table
+create table
+(
+  shoesid    NUMBER(10) not null,
+  shoesname  VARCHAR2(50) not null,
+  shoesprice NUMBER(10,2) not null,
+  introduce  VARCHAR2(200),
+  shoesintr  VARCHAR2(500),
+  shoescount NUMBER(10),
+  shoesstate VARCHAR2(10) not null,
+  release    VARCHAR2(100) not null,
+  color      VARCHAR2(10) not null,
+  shoestype  VARCHAR2(20) not null,
+  keyword    VARCHAR2(50) not null,
+  shoesimg   VARCHAR2(50) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    next 1
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table 
+  add primary key (SHOESID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table 
+  add unique (SHOESNAME)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate check constraints 
+alter table 
+  add check (shoesstate in ('ио╪э','об╪э'));
